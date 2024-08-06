@@ -31,6 +31,7 @@
 #          mahasiswa
 
 
+
 # >>>>> sorted & sort (mengurutkan abjad dari a-z dan dari z-a)
 # >> mengurutkan dari a-z pake sorted
 # abjad = ['d','A','e', 'b','E','c']
