@@ -1,0 +1,71 @@
+There is a corporation with N employees with ids 1,2,…,N. Each employee has some initial monthly salary. There are two types of events:
+* Type 0: All employees from l to r have their salary changed to c.
+* Type 1: Each employee from l to r gets their salary changed by c (where c can be negative).
+
+After each event, each employee's happiness increases by 1 if their salary has just increased and decreases by 1 if their salary has just decreased — nothing happens if their salary didn’t change.
+
+There are also two types of queries:
+* Type 2: What’s the average salary of all employees from l to r?
+* Type 3: What’s the average happiness of all employees from l to r?
+
+Process Q events and queries.
+
+Input
+The first line contains two integers N and Q. The next line contains N integers representing the initial salaries of the employees. The next Q lines describe consecutive events and queries, formatted as follows:
+* For type 0: 0 l r c
+* For type 1: 1 l r c
+* For type 2: 2 l r
+* For type 3: 3 l r
+
+Output
+For each query of type 2 and type 3, output the result on a new line. The result should be printed as a fraction of the form P/Q where P and Q are coprime integers (gcd(P,Q)=1).
+
+Constraints and notes
+* 1 ≤ N,*Q *≤ 2⋅10^5
+* The initial salaries are integers from the interval [1,10^9]
+* 1 ≤ *l *≤ *r *≤ N
+* −10^9 ≤ *c *≤10^9
+* Salary values can become negative after some events
+* The inital happiness level of each employee is 0
+
+understand the meaning of the question
+
+
+The code is correct, but there are some conditions that must be met from this input:
+input:
+2
+6
+-8 -6 9 5 -6 -10
+2
+-1 -8
+
+output:
+44
+9
+
+explanation:
+For the first test case, it's possible to apply the operation on positions 2 and 6, which gives the array 8,6,9,5,6,10) and its maximum subarray sum is 8+6+9+5+6+10=44
+
+For the second test case, it's possible to apply the operation on position 2, which gives the array (1,8) and its maximum subarray sum is 1+8=9 .
+
+and second condition
+input:
+3
+2
+-9 0
+2
+-2 1
+6
+-6 3 7 1 -4 -6
+
+output:
+9
+2
+21
+
+explanation:
+For the first test case, it's possible to apply the operation on position 2, which gives the array (9,0) and its maximum subarray sum is 9+0=9 .
+
+For the second test case, it's possible to apply the operation on position 2, which gives the array (2,−1) and its maximum subarray sum is 2 .
+
+For the third test case, it's possible to apply the operation on position 6, which gives the array (−6,3,7,1,4,6) and its maximum subarray sum is 3+7+1+4+6=21

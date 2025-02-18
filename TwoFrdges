@@ -1,0 +1,36 @@
+def binary_search(a, b, target):
+    low = a
+    high = b
+    while low <= high:
+        mid = (low + high) // 2
+        if mid == target:
+            return mid
+        elif mid < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return None
+
+def find_temperatures(N, intervals):
+    fridge1_min = -100
+    fridge1_max = 100
+    fridge2_min = -100
+    fridge2_max = 100
+    while fridge1_min <= fridge1_max and fridge2_min <= fridge2_max:
+        fridge1 = (fridge1_min + fridge1_max) // 2
+        fridge2 = (fridge2_min + fridge2_max) // 2
+        if all(binary_search(interval[0], interval[1], fridge1) for interval in intervals[:N//2]) and all(binary_search(interval[0], interval[1], fridge2) for interval in intervals[N//2:]):
+            return fridge1, fridge2
+        elif not all(binary_search(interval[0], interval[1], fridge1) for interval in intervals[:N//2]):
+            fridge1_min = fridge1 + 1
+        else:
+            fridge2_min = fridge2 + 1
+    return -1, -1
+
+N = 4
+intervals = [(-54, -40), (-50, -42), (36, 77), (49, 100)]
+result = find_temperatures(N, intervals)
+if result[0] == -1:
+    print(-1)
+else:
+    print(result[0], result[1])

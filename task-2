@@ -1,0 +1,34 @@
+A doubled sequence SN is a sequence that holds the following conditions:
+
+- It contains each value in {1,2,…,N} exactly twice.
+- Let Li and Ri be the leftmost and rightmost occurrence of i in SN, then Ri−Li=i.
+
+Given N, find any doubled sequence SN or determine that none exists.
+
+Standard input
+- The first line of input contains an integer T, the number of test cases.
+- The following t lines contain an integer N, the i-th line contains the N corresponding to the i-th query.
+
+Standard output
+Print T lines, the i-th line must contain a doubled sequence SN or −1 if there are no doubled sequences.
+
+Constraints and notes
+1 ≤ T ≤ 10^5
+1 ≤ Ni ≤ 10^6 for each i=1,…,T
+1 ≤ Sigma i=1 until t  Ni ≤ 10^6
+
+with this example input:
+4
+1
+2
+3
+4
+
+will produce an output:
+1 1
+-1
+-1
+2 3 2 4 3 1 1 4
+
+make a code in C++
+
